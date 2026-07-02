@@ -15,7 +15,7 @@ export interface Game {
 })
 export class GameService {
   // URL pointing to the running Django REST API endpoint
-  private apiUrl = 'http://127.0.0.1:8000/api/games/';
+  private apiUrl = 'https://gamekey-fullstack.onrender.com/api/games/';
 
   constructor(private http: HttpClient) {}
 
