@@ -1,0 +1,19 @@
+<div class="detail-container">
+  @if (game) {
+    <h2>🎮 Game Details: {{ game.title }}</h2>
+    <div class="card">
+      <p><strong>ID:</strong> {{ game.id }}</p>
+      <p><strong>Price:</strong> ${{ game.price | number:'1.2-2' }}</p>
+      <p>
+        <strong>Status:</strong>
+        <span class="status" [ngClass]="game.available ? 'available' : 'out-of-stock'">
+          {{ game.available ? 'In Stock' : 'Out of Stock' }}
+        </span>
+      </p>
+    </div>
+  } @else {
+    <p class="error-msg">Game not found.</p>
+  }
+
+  <a routerLink="/games" class="btn-back">← Back to Catalog</a>
+</div>

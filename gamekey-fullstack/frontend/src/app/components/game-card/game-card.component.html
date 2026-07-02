@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-img-wrapper">
+    <img src="/gta-cover.png" alt="Game Cover" class="card-img">
+  </div>
+  <h3>{{ game.title }}</h3>
+  <p class="price">${{ game.price | number:'1.2-2' }}</p>
+
+  <p class="status-line">
+    <span class="status" [ngClass]="game.available ? 'available' : 'out-of-stock'">
+      {{ game.available ? 'In Stock' : 'Out of Stock' }}
+    </span>
+  </p>
+
+  <!-- Custom pipe formats the raw key string -->
+  <p class="demo-key">Key: <code>{{ mockKey | keyFormat }}</code></p>
+
+  <div class="card-actions">
+    <a [routerLink]="['/games', game.id]" class="btn-link">View Details</a>
+    <button (click)="onAddToCartClick()" class="btn-cart">Add to Cart</button>
+    <button (click)="onToggleClick()" class="btn-toggle">Toggle</button>
+    <button (click)="onRemoveClick()" class="btn-remove">Remove</button>
+  </div>
+</div>

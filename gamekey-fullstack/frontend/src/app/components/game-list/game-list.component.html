@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>🎮 Game Inventory Management</h2>
+
+  <!-- Quick-add form (Day 2 style, no validation) -->
+  <div class="form-group">
+    <input type="text" [(ngModel)]="newGameTitle" placeholder="Enter game title" class="input-box" />
+    <input type="number" [(ngModel)]="newGamePrice" placeholder="Price" class="input-box" />
+    <button (click)="addGame()" class="btn-add">Add Game</button>
+    <a routerLink="/games/add" class="btn-link">Use Validated Form →</a>
+  </div>
+
+  @if (games.length === 0) {
+    <p class="empty-msg">No games in inventory.</p>
+  } @else {
+    <div class="game-cards-container">
+      @for (game of games; track game.id) {
+        <app-game-card
+          [game]="game"
+          (remove)="onRemoveGame($event)"
+          (addToCart)="addToCart($event)"
+          (toggleAvailability)="toggleAvailability($event)">
+        </app-game-card>
+      }
+    </div>
+  }
+</div>
