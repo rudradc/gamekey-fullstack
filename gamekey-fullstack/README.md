@@ -72,3 +72,11 @@ accept requests from `http://localhost:4200`.
 - Background webhook delivery (Celery + Redis) requires the `redis` and
   `worker` services to be running — both are included in
   `docker-compose.yml`.
+
+
+
+
+  <img width="1918" height="973" alt="Screenshot 2026-07-02 113327" src="https://github.com/user-attachments/assets/49ac882c-cd01-4ea6-90f1-bcf160d16d9f" />
+  <img width="1918" height="911" alt="Screenshot 2026-07-02 113442" src="https://github.com/user-attachments/assets/feb946ad-cdda-45f4-84f9-1e60f65da377" />
+
+
